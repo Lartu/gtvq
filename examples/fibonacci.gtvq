@@ -1,0 +1,23 @@
+!-----------*
+* fibonacci *
+*-----------!
+
+def fibonacci : n {
+    if { varex (join (get n) "cache") } {
+        gget (join (get n) "cache")
+    } else {
+        if { < (get n) 2 } {
+            return 1
+        } else {
+            gset (join (get n) "cache") (
+                + (call fibonacci (- (get n) 1)) (call fibonacci (- (get n) 2))
+            )
+            gget (join (get n) "cache")
+        }
+    }
+}
+
+for i from 0 to (+ 200 1) {
+    display "Fibonacci de " (get i) ": " (call fibonacci (get i))
+}
+

@@ -1,0 +1,16 @@
+!.:.:.:.:.:.:.:.:.:.:!
+! 99 bottles of beer !
+!.:.:.:.:.:.:.:.:.:.:!
+
+for i from 99 to 0 {
+    display (get i) " bottle" (if { <> 1 (get i) } { return "s" }) " of beer on the wall,"
+    display (get i) " bottle" (if { <> 1 (get i) } { return "s" }) " of beer."
+    display "Take one down, pass it around"
+    set i (- (get i) 1)
+    if { < 0 (get i) } {
+        display (get i) " bottle" (if { <> 1 (get i) } { return "s" }) " of beer on the wall."
+        display ""
+    }else{
+        display "No bottles of beer on the wall :("
+    }
+}

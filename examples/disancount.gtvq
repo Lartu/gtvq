@@ -1,0 +1,18 @@
+!.:.:.:.:.:.:.!
+! disan count !
+!.:.:.:.:.:.:.!
+
+def even : value {
+    == 0 (% (get value) 2)
+}
+
+display "Disan Count!"
+set max (accept "Enter a number: ")
+
+for i from 0 to (+ (get max) 1) {
+    if { call even (get i) } {
+        display (get i) " is even!"
+    }
+}
+
+display "Done!"
